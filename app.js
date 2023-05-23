@@ -23,12 +23,14 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/calc', calcRouter);
 
-// catch 404 and send error message
-app.use((req, res) => {
-  res.status(404).send('404: Page not found');
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-// error handler
+// error handlers
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
