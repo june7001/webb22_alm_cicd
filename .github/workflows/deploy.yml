@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Fake Deploy
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "Now deploying to production"
+          else
+            echo "Now deploying branch: $(echo ${GITHUB_REF#refs/heads/}) to the test server"
+          fi

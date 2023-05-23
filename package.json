@@ -15,7 +15,6 @@
       "pre-commit": "npm test"
     }
   },
-  
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -31,6 +30,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
   }
 }
