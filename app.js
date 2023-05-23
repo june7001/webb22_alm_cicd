@@ -7,6 +7,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
+const calcRouter = require('./routes/calc');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/calc', calcRouter);
 
 // catch 404 and send error message
 app.use((req, res) => {
