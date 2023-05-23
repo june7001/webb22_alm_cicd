@@ -2,12 +2,22 @@ env:
   commonjs: true
   es2021: true
   node: true
+  mocha: true # Assuming you are using Mocha for tests
 extends:
   - 'airbnb-base'
   - 'plugin:prettier/recommended'
 overrides: []
 parserOptions:
-  ecmaVersion: latest
+  ecmaVersion: 12 # 12 is equivalent to es2021
 rules:
-  'prettier/prettier': ['error']
+  'prettier/prettier': 'error'
   'no-unused-vars': ['error', { argsIgnorePattern: 'next' }]
+  'lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: true },
+    ] # to allow single-line class members
+  'no-var': 'error' # disallow var
+  'import/newline-after-import': 'error' # enforce new line after import
+  'consistent-return': 'error' # require function handlers to always return
+  'func-names': ['error', 'never'] # don't require function expressions to have a name
