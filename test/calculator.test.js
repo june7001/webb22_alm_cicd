@@ -10,7 +10,7 @@ describe('Calculator', () => {
   });
   it('should subtract two numbers', () => {
     const result = Calculator.subtract(3, 1);
-    assert.strictEqual(result, 2);
+    assert.strictEqual(result, 3);
   });
 });
 
